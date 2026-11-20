@@ -1,0 +1,84 @@
+[
+ {
+  "file": "story-1-call-to-paid",
+  "title": "Call to paid",
+  "what": "A customer phones in, gets booked, approves an estimate from her email and pays. Calls, customers, booking, dispatch, pricebook, estimates, invoices, payments and AR in one run.",
+  "results": [
+   [
+    10,
+    "pass"
+   ],
+   [
+    1,
+    "blocked"
+   ],
+   [
+    1,
+    "skipped"
+   ]
+  ],
+  "note": "Dispatch was refused because every A Star technician was busy on an older test job. The QuickBooks batch is skipped: A Star has no QuickBooks connection.",
+  "by": "Siddharth (Claude)",
+  "date": "20 Nov 2026"
+ },
+ {
+  "file": "story-2-declined-follow-up",
+  "title": "Declined, then sold",
+  "what": "The customer turns down the first estimate, the office follows up, and a cheaper option gets signed.",
+  "results": [
+   [
+    7,
+    "pass"
+   ]
+  ],
+  "note": "Follow-ups appear once the job is completed, as in ServiceTitan.",
+  "by": "Siddharth (Claude)",
+  "date": "20 Nov 2026"
+ },
+ {
+  "file": "story-3-partial-payment",
+  "title": "Partial payment",
+  "what": "Half paid in cash now, the rest by check later. AR shows the open half in between.",
+  "results": [
+   [
+    6,
+    "pass"
+   ]
+  ],
+  "note": "",
+  "by": "Siddharth (Claude)",
+  "date": "20 Nov 2026"
+ },
+ {
+  "file": "story-4-refunds",
+  "title": "Refunds",
+  "what": "Fifty dollars back from a check payment, then a cash payment refunded in full.",
+  "results": [
+   [
+    4,
+    "pass"
+   ]
+  ],
+  "note": "The known refund bugs BOS-4271 and BOS-4273 did not reproduce.",
+  "by": "Siddharth (Claude)",
+  "date": "20 Nov 2026"
+ },
+ {
+  "file": "story-5-membership",
+  "title": "Membership on the visit",
+  "what": "A membership is sold from the customer page, paid by check, and shows on the next booking.",
+  "results": [
+   [
+    4,
+    "pass"
+   ],
+   [
+    1,
+    "fail"
+   ]
+  ],
+  "note": "Haven keeps a sold membership Pending until it is paid; ServiceTitan activates it at sale (BOS-4523). The list leaves Customer and Location empty (BOS-4524).",
+  "by": "Siddharth (Claude)",
+  "date": "20 Nov 2026"
+ }
+]

@@ -1,0 +1,37 @@
+[
+ {
+  "at": 0.0,
+  "id": "s1",
+  "caption": "Create the customer",
+  "result": "PASS",
+  "note": ""
+ },
+ {
+  "at": 20.36,
+  "id": "s2",
+  "caption": "Sell the membership",
+  "result": "PASS",
+  "note": ""
+ },
+ {
+  "at": 34.65,
+  "id": "s3",
+  "caption": "Pending, not Active",
+  "result": "PASS",
+  "note": ""
+ },
+ {
+  "at": 55.57,
+  "id": "s4",
+  "caption": "Book a job for the member",
+  "result": "PASS",
+  "note": ""
+ },
+ {
+  "at": 73.85,
+  "id": "s5",
+  "caption": "Pay it, and it goes Active",
+  "result": "PASS",
+  "note": ""
+ }
+]

@@ -1,0 +1,44 @@
+[
+ {
+  "at": 0.0,
+  "id": "s1",
+  "caption": "Create the customer and book the job",
+  "result": "PASS",
+  "note": ""
+ },
+ {
+  "at": 27.64,
+  "id": "s2",
+  "caption": "Build and send the estimate",
+  "result": "PASS",
+  "note": ""
+ },
+ {
+  "at": 61.04,
+  "id": "s2-sign",
+  "caption": "The customer signs",
+  "result": "PASS",
+  "note": ""
+ },
+ {
+  "at": 72.4,
+  "id": "s3",
+  "caption": "Invoice, then half in cash",
+  "result": "PASS",
+  "note": ""
+ },
+ {
+  "at": 102.24,
+  "id": "s4",
+  "caption": "AR shows the open half",
+  "result": "PASS",
+  "note": ""
+ },
+ {
+  "at": 119.37,
+  "id": "s5",
+  "caption": "The rest by check",
+  "result": "PASS",
+  "note": ""
+ }
+]
