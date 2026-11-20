@@ -2,3 +2,5 @@ README.md
 build_site.py
 stories.json
 *.marks.json
+*.mp4
+upload.mjs

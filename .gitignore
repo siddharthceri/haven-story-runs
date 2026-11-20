@@ -1,2 +1,4 @@
 .vercel
 .env*
+*.mp4
+*.marks.json
