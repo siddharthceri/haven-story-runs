@@ -6,7 +6,7 @@
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg-2);font:15px/1.55 var(--sans)}
 main{max-width:1040px;margin:0 auto;padding:56px 24px 72px}
 .lab{font:500 11px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--fg-3)}
-h1{font-size:40px;font-weight:600;letter-spacing:-.04em;line-height:1.05;color:var(--fg);margin:12px 0 12px}h1 span{color:var(--fg-3)}
+h1{font-size:40px;font-weight:600;letter-spacing:-.04em;line-height:1.05;color:var(--fg);margin:12px 0 28px}h1 span{color:var(--fg-3)}
 .lead{max-width:640px;margin:0 0 28px}
 .bar{display:flex;align-items:center;border:1px solid var(--line);background:var(--surface);margin-bottom:-1px}
 .bar input{flex:1;height:44px;border:0;padding:0 16px;font:15px var(--sans);background:none;outline:none;color:var(--fg)}
@@ -28,12 +28,11 @@ tr.player td{padding:0 16px 20px;background:var(--surface)}video{width:100%;disp
 .empty{padding:16px;color:var(--fg-3);border:1px solid var(--line);border-top:0;background:var(--surface);margin:0}
 footer{margin-top:24px;font-size:13px;color:var(--fg-3)}
 @media(max-width:720px){main{padding:32px 16px 48px}h1{font-size:30px}th:nth-child(2),td:nth-child(2){display:none}.chs{grid-template-columns:1fr}.ch:nth-child(odd){border-right:0}}</style></head><body><main><div class="lab">Haven OS v2 · user stories on video</div>
-<h1>Haven story runs. <span>Real customer journeys, recorded end to end.</span></h1>
-<p class="lead">Each story runs through the real product on a test company, narrated step by step. Useful while QAing, and for understanding how a flow works.</p>
+<h1>Haven story runs</h1>
 <div class="bar"><input id="q" type="search" placeholder="Search stories, steps, people…" aria-label="Search stories"><div class="sum" id="sum">Loading…</div></div>
 <table><thead><tr><th>Story</th><th>Recorded by</th><th>Result</th><th></th></tr></thead><tbody id="rows"></tbody></table>
 <p id="empty" class="empty" hidden>No story matches.</p>
-<footer>Recorded with Playwright and narrated with ElevenLabs. Add yours with the record-user-stories skill.</footer></main>
+</main>
 <script>
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const clock=t=>Math.floor(t/60)+':'+String(Math.floor(t%60)).padStart(2,'0');
