@@ -24,7 +24,7 @@ h1{font-size:40px;font-weight:600;letter-spacing:-.04em;line-height:1.05;color:v
 .bar .sum b{color:var(--accent-ink);font-weight:500}
 table{width:100%;border-collapse:collapse;border:1px solid var(--line);background:var(--surface)}
 th{text-align:left;font:500 11px var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--fg-3);padding:10px 16px;border-bottom:1px solid var(--line)}
-td{padding:16px;border-bottom:1px solid var(--line);vertical-align:top}tr.row{transition:background .15s ease}tr.row:hover{background:var(--hover)}
+td{padding:16px;border-bottom:1px solid var(--line);vertical-align:top}tr.row{transition:background .15s ease;cursor:pointer}tr.row:hover{background:var(--hover)}
 .t{color:var(--fg);font-weight:600;font-size:16px;letter-spacing:-.01em}.w{font-size:13px;color:var(--fg-3);margin-top:2px;max-width:560px}
 .m{font:12px/1.7 var(--mono);white-space:nowrap}
 .st i{display:inline-block;width:6px;height:6px;margin-right:8px;background:var(--fg-3)}.st.pass i{background:var(--ok)}.st.fail i{background:var(--bad)}
@@ -42,8 +42,9 @@ footer{margin-top:24px;font-size:13px;color:var(--fg-3)}
 JS = """const q=document.getElementById('q');q.oninput=()=>{const v=q.value.toLowerCase();let n=0;
 document.querySelectorAll('tr.row').forEach(r=>{const hit=r.dataset.s.includes(v);r.hidden=!hit;if(!hit)r.nextElementSibling.hidden=true;n+=hit});
 document.getElementById('empty').hidden=n>0};
-document.querySelectorAll('button.watch').forEach(b=>b.onclick=()=>{const p=b.closest('tr').nextElementSibling,v=p.querySelector('video');
-p.hidden=!p.hidden;b.textContent=p.hidden?'Watch':'Hide';b.classList.toggle('on',!p.hidden);if(p.hidden)v.pause()});
+function toggle(r){const p=r.nextElementSibling,v=p.querySelector('video'),b=r.querySelector('button.watch'),open=p.hidden;
+p.hidden=!open;b.textContent=open?'Hide':'Watch';b.classList.toggle('on',open);if(open){v.play().catch(()=>{})}else v.pause()}
+document.querySelectorAll('tr.row').forEach(r=>{r.tabIndex=0;r.onclick=()=>toggle(r);r.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle(r)}}});
 document.querySelectorAll('.ch').forEach(c=>c.onclick=()=>{const v=c.closest('td').querySelector('video');v.currentTime=+c.dataset.t;v.play()})"""
 
 
@@ -56,7 +57,7 @@ def row(s):
     return (f'<tr class="row" data-s="{search}"><td><div class="t">{html.escape(s["title"])}</div><div class="w">{html.escape(s["what"])}</div></td>'
             f'<td class="m">{html.escape(s["by"])}<br>{html.escape(s["date"])}</td><td class="m">{res}</td>'
             f'<td><button class="watch">Watch</button></td></tr>'
-            f'<tr class="player" hidden><td colspan="4"><video src="{s["file"]}.mp4" controls preload="none" playsinline></video><div class="chs">{ch}</div>{note}</td></tr>')
+            f'<tr class="player" hidden><td colspan="4"><video src="{s["file"]}.mp4" controls preload="metadata" playsinline></video><div class="chs">{ch}</div>{note}</td></tr>')
 
 
 page = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
